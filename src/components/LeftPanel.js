@@ -23,20 +23,20 @@ const LeftPanel = () => {
   return (
     <div className="left-panel">
       <img
-        src="../icons/add.png"
+        src="../icons/add.PNG"
         onClick={openPopup}
         alt="Add"
         className="left-panel__item"
       />
       <img
         onClick={cleanTodo}
-        src="../icons/clean-code.png"
+        src="../icons/clean-code.PNG"
         alt="Clean"
         className="left-panel__item"
       />
       <img
         onClick={toggleDeleteModel}
-        src="../icons/trash.png"
+        src="../icons/trash.PNG"
         alt="Delete"
         className={
           state.deleteMode ? "left-panel__item active" : "left-panel__item"
