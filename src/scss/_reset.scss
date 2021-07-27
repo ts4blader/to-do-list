@@ -1,0 +1,30 @@
+@import "./variables";
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
+
+$font: "Nunito Sans";
+// ====== Reset ============
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font !important;
+  font-size: $size;
+  color: $text-color;
+  background-color: $accent-color;
+  overflow-x: hidden;
+  line-height: 1.25;
+}
+
+a {
+  color: lightblue;
+  text-decoration: none;
+  font-family: $font;
+}

@@ -1,0 +1,38 @@
+.to-do-panel {
+    position: relative;
+    flex-grow: 1;
+    height: 100vh;
+    @include flex(space-between, row);
+    align-items: stretch;
+    flex-wrap: wrap;
+    .watermark-container {
+        .item {
+            position: absolute;
+            color: #5e5e5e;
+            font-style: italic;
+            font-size: $size * 0.8;
+            &.imp {
+                top: $size;
+                left: $size;
+            }
+            &.nes {
+                bottom: $size;
+                right: $size;
+            }
+        }
+    }
+    .ruler-container {
+        .item {
+            background: #5e5e5e;
+            @include absoluteCenter();
+            &.hor {
+                width: 2px;
+                height: 90%;
+            }
+            &.ver {
+                height: 2px;
+                width: 90%;
+            }
+        }
+    }
+}

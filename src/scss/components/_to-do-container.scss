@@ -1,0 +1,10 @@
+.to-do-container {
+    flex: 50%;
+    height: 50vh;
+    padding: 5vh;
+    overflow: auto;
+    ul {
+        width: 90%;
+        margin: 0 auto;
+    }
+}

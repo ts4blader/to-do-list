@@ -1,0 +1,87 @@
+// ====== Function =========
+
+@mixin flex($justify: center, $direction: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: center;
+}
+
+@mixin absoluteCenter($pos: "both") {
+  position: absolute;
+  @if $pos == "both" {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  @if $pos == "hor" {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  @if $pos == "ver" {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+@mixin centerContent($height) {
+  text-align: center;
+  line-height: $height;
+}
+@mixin centerContainer($gap: 0) {
+  width: max-content;
+  margin: $gap auto;
+}
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin container($width: 80%, $gap: 0) {
+  width: $width;
+  margin: $gap auto;
+}
+@mixin animation($direction: 'X', $offset: -10vh, $delay: '0ms'){
+  transition: transform 300ms ease, opacity 200ms ease 100ms;
+  transition-delay: $delay;
+  opacity: 0;
+  @if $direction == 'X' {
+    transform: translateX($offset);
+    &.play{
+      opacity: 1;
+      transform: translateX(0);
+    }
+  } @else {
+    transform: translateY($offset);
+    &.play{
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+//media controls
+@mixin responsive($break-point){
+  @media (max-width: $break-point){
+    @content;
+  }
+}
+
+
+//function class
+.container{
+  width: 80%;
+  margin: 0 auto;
+  @include responsive($break-point){
+    width: 90%;
+  }
+}
+.row{
+  @include flex(center, row);
+  @include responsive($break-point){
+    flex-direction: column;
+  }
+  .col{
+    flex: 1;
+  }
+}

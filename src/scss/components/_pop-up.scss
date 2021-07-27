@@ -1,0 +1,95 @@
+.popup {
+    width: 50%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: all 300ms ease;
+    color: white;
+    background: $bg-color;
+    padding: $size * 1.5 $size * 2;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+    &.open {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    &__title {
+        font-size: $size * 3;
+        margin-bottom: $size * 1.5;
+        font-weight: bold;
+    }
+    &__close {
+        cursor: pointer;
+        position: absolute;
+        top: $size * 2;
+        right: $size * 2;
+        width: 2vw;
+        height: 10px;
+        background: white;
+    }
+    &__form {
+        input {
+            font-family: $font;
+            font-size: $size * 1.2;
+            font-weight: 600;
+            border: none;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: $size * 0.5 $size * 0.8;
+            margin-bottom: $size * 1.5;
+        }
+        .submit-btn {
+            width: 25%;
+            text-align: center;
+            background: $accent-color;
+            color: $text-color;
+            padding: $size * 0.5 $size * 0.8;
+            font-size: $size * 1.2;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .checkboxes-container {
+            @include flex(start, row);
+            margin-bottom: $size * 1.5;
+            .checkbox {
+                margin-right: $size * 3;
+                display: flex;
+                align-items: center;
+                input[type="checkbox"] {
+                    opacity: 0;
+                    width: $size;
+                    height: $size;
+                    &:checked {
+                        & + span {
+                            .svg {
+                                opacity: 1;
+                                transform: translate(-50%, -50%);
+                            }
+                        }
+                    }
+                }
+                span {
+                    border: 3px solid white;
+                    width: $size * 1.5;
+                    height: $size * 1.5;
+                    position: relative;
+                    .svg {
+                        @include absoluteCenter("both");
+                        transform: translate(-50%, -100%);
+                        width: 20px;
+                        height: 20px;
+                        opacity: 0;
+                        transition: all 0.1s ease;
+                    }
+                }
+                label {
+                    font-weight: 600;
+                    margin-left: $size * 0.5;
+                    text-transform: capitalize;
+                }
+            }
+        }
+    }
+}

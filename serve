@@ -1,0 +1,2 @@
+cd ~/Documents/to-do-list
+serve -s build &

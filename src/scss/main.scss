@@ -1,0 +1,15 @@
+@import "./variables";
+@import "./reset";
+@import "./function";
+
+// Component
+@import "./components/to-do-item";
+@import "./components/left-panel";
+@import "./components/to-do-panel";
+@import "./components/pop-up";
+@import "./components/to-do-container";
+
+// App setting
+.app {
+    @include flex(space-between, row);
+}
