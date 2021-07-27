@@ -1,6 +1,8 @@
 import React from "react";
 import { StoreContext } from "../Store";
 import { ACTION } from "../Reducer";
+import edit from "../icons/edit.png";
+import close from "../icons/close.png";
 
 export const createTodo = (content, nes = false, imp = false) => {
   return {
@@ -43,7 +45,7 @@ export default function ToDoItem({ content }) {
       ></div>
       {state.deleteMode ? (
         <img
-          src="./icons/close.png"
+          src={close}
           alt="Delete"
           className="to-do-item__delete"
           onClick={deleteTodo}
@@ -51,7 +53,7 @@ export default function ToDoItem({ content }) {
       ) : (
         <img
           onClick={openPopup}
-          src="../icons/edit.png"
+          src={edit}
           alt="edit"
           className="to-do-item__edit"
         />

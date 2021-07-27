@@ -1,7 +1,10 @@
 import React from "react";
 import { StoreContext } from "../Store";
-import IconHelper from "../helpers/IconHelper";
 import { ACTION } from "../Reducer";
+import add from "../icons/add.png";
+import clean from "../icons/clean-code.png";
+import trash from "../icons/trash.png";
+
 const LeftPanel = () => {
   const [state, dispatch] = React.useContext(StoreContext);
 
@@ -24,20 +27,20 @@ const LeftPanel = () => {
   return (
     <div className="left-panel">
       <img
-        src={IconHelper("add.png")}
+        src={add}
         onClick={openPopup}
         alt="Add"
         className="left-panel__item"
       />
       <img
         onClick={cleanTodo}
-        src={IconHelper("clean-code.png")}
+        src={clean}
         alt="Clean"
         className="left-panel__item"
       />
       <img
         onClick={toggleDeleteModel}
-        src={IconHelper("trash.png")}
+        src={trash}
         alt="Delete"
         className={
           state.deleteMode ? "left-panel__item active" : "left-panel__item"
